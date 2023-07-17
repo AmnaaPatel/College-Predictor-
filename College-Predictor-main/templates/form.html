@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static',filename='styles/form.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="form.css"> -->
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>COLLEGE PREDICTOR</h1>
+    <p>Please fill out this form to find out the best college for you.</p>
+    <form name="f1" method="post" action="{{ url_for("form")}}">
+      <fieldset>
+        <label for="rank">Enter Your JEE Rank: <input id="rank" name="rank" type="number" min="1" max="1200000" required /></label><br>
+        <label for="round">Enter Round No.: <input id="round" name="round" type="number" min="1" max="7" required /></label><br>
+        <label for="category">Select your Category:
+            <select id="category" name="category" required>
+              <option value="">(select one)</option>
+              <option value="GEN">GEN</option>
+              <option value="OBC-NCL">OBC-NCL</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="GEN-PWD">GEN-PWD</option>
+              <option value="OBC-NCL-PWD">OBC-NCL-PWD</option>
+              <option value="SC-PWD">SC-PWD</option>
+              <option value="ST-PWD">ST-PWD</option>
+              <option value="GEN-EWS">GEN-EWS</option>
+              <option value="GEN-EWS-PWD">GEN-EWS-PWD</option>
+            </select>
+          </label>     
+          <br>
+          <label for="quota">Select your Ouota:
+          <select id="quota" name="quota" required>
+            <option value="">(select one)</option>
+            <option value="AI">AI</option>
+            <option value="AP">AP</option>
+            <option value="GO">GO</option>
+            <option value="HS">HS</option>
+            <option value="JK">JK</option>
+            <option value="LA">LA</option>
+            <option value="OS">OS</option>
+        </select>   
+        </label>
+        <br>
+        <label for="pool">Select your Pool:
+          <select id="pool" name="pool" required>
+            <option value="">(select one)</option>
+            <option value="Gender-Neutral">Gender-Neutral</option>
+            <option value="Female-Only">Female-Only</option>
+        </select>
+        </label>
+<br>
+      </fieldset>
+      
+      <input type="submit"></submit>
+
+    </form>
+    <br><br>
+    <a href="{{ url_for('result') }} "><STYLE="font-size: 20px;margin-left:50px"> Click here to see the results</a>
+  </body>
+  </html>
+  
